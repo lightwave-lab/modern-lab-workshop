@@ -75,6 +75,8 @@ Make sure you:
 ### Extra
 * Bring a MATLAB code you have done in the past (we are going to python that in the workshop)
 
+# Workshop notes
+
 ## Version control and Git
 
 ### Start with an introductory video. Options:
@@ -85,7 +87,19 @@ Make sure you:
 
 ### Now an exercise of collaboration:
 Let us all edit someone's [PhD thesis](http://www.jeffdwoskin.com/dissertation/#template) from EE department, typeset in Latex.
-* Go to https://github.com/lightwave-lab
+* Go to https://github.com/lightwave-lab/modern-lab-workshop
+* Clone the repository
+* Open the project with sublime (install shortcut with subl)
+* Small demo with LatexTools installed (compilation and opening)
+    - Compile with Cmd-B
+    - Check Pdf (Cmd-L v) if you have Skim installed
+    - Clean files with (Cmb-L Backspace)
+* Manual compilation command:
+    - `latexmk -cd -f -pdflatex -interaction=nonstopmode -synctex=1 /path/to/thesis.tex`
+    - `-cd` - Change to directory of source file when processing it
+    - `-f` - force continued processing past errors
+    - use the `./clean.sh` script to delete auxiliary files.
+* Make a `.gitignore` file inside `01-git-exercise-latex` to ignore latex temporary files as well as the generated `thesis.pdf`. Check if it worked with `git status`.
 
 ### References
 [Community git book](https://book.git-scm.com/docs)
