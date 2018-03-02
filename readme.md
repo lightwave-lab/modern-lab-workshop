@@ -65,7 +65,7 @@ We are going to discuss some techniques to make our lives a little easier and ou
     - I am going to assume you know what you are doing if you are using linux. Make sure you have virtualenv and python 3.6 installed
 
 ### Get started
-Fortunately, somebody has done the legwork for me: [python4photonics Getting Started](https://python4photonics.org/gettingstarted/).
+Fortunately, somebody has done the legwork for me: [python4photonics Getting Started](https://python4photonics.gitlab.io).
 
 Make sure you:
 * Are able to launch a jupyter notebook with python 3
