@@ -12,7 +12,7 @@ We are going to discuss some techniques to make our lives a little easier and ou
     - Cloning and collaborating from github (15 minutes)
     - A small intro to UNIX and bash
     - Digital security + private key authentication + 2FA
-    - Break demo: have all connect to cassander with their key
+    - Break demo: have all connect to cassander/github with their key
 * 10:00AM - break (installation of homebrew + virtualenv + python3 + jupyter)
 * 10:15AM - Messing around with python
     - Features of a programming language (coming from MATLAB) - python as example
@@ -101,10 +101,109 @@ Let us all edit someone's [PhD thesis](http://www.jeffdwoskin.com/dissertation/#
     - use the `./clean.sh` script to delete auxiliary files.
 * Make a `.gitignore` file inside `01-git-exercise-latex` to ignore latex temporary files as well as the generated `thesis.pdf`. Check if it worked with `git status`.
 
-### References
+Now make edits to the files and follow the instructions to add changes to stage, commiting and pushing.
+
+TODO: Insert commands used for that
+
+## Intro to UNIX and bash
+
+TODO: Insert here the commands used while going through the slides.
+
+## Digital security and private key authentication
+
+Let's make a private key. The default one is stored in `~/.ssh/id_rsa` and `~/.ssh/id_rsa.pub`.
+
+The main command is `ssh-keygen`. We will follow the instructions in [Connecting to GitHub with SSH](https://help.github.com/articles/connecting-to-github-with-ssh/)
+
+## Installation of python environemnt
+
+### Instructions for macOS
+
+Mostly taken from [Marina Mele](http://www.marinamele.com/2014/07/install-python3-on-mac-os-x-and-use-virtualenv-and-virtualenvwrapper.html)
+
+```bash
+#First, have the xcode Command Line Tools. These are the basic compilers you need to get started. Install with 
+xcode-select --install
+
+# Then, install homebrew, which is a repository of pre-built opensource packages (if there is no build for your OS version, it will default to compilation from source code. Neat!)
+
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# I think brew installation already writes the following line to your .bash_profile, but in case it doesn't, do it yourself.
+
+# First, verify it's there. Restart your terminal, and run
+echo $PATH
+# /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/opt/X11/bin
+
+# If it isn't, it is safe to add it to ~/.bash_profile
+# open editor 
+nano ~/.bash_profile
+# And then copy this line in the bottom
+export PATH=/usr/local/bin:$PATH
+# Exit nano while saving with Ctrl-X, Yes, Enter. Restart your terminal
+
+# Before continuing, it might be a good idea to inspect whether brew sees some problem in your system that would cause it to malfunction
+brew doctor
+
+# Then, with Brew installed, install python3
+brew install python3
+
+# Verify version with:
+python3 --version
+# Python 3.6.4
+which python3
+# /usr/local/bin/python3
+which pip3
+# /usr/local/bin/pip3
+
+# If you don't have the results above please stop and fix the bash_profile until you do.
+
+# We can skip pyvenv's instructions...
+
+# Installing virtualenvwrapper
+pip3 install virtualenv virtualenvwrapper
+
+# Configure virtualenvwrapper
+# First, create the folder your virtualenvs will live:
+mkdir ~/Envs
+
+# Then, add the following line to your ~/.bashrc
+export WORKON_HOME=~/Envs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+source /usr/local/bin/virtualenvwrapper.sh
+
+# Restart the terminal, or execute
+source ~/.bashrc
+
+# Create your first virtual environment (note that autocomplete works)
+mkvirtualenv standard
+# Using base prefix '/usr/local/Cellar/python3/3.6.4_2/Frameworks/Python.framework/Versions/3.6'
+# ...
+
+# This will automatically activate the virtual environment. it should show (standard) at your bash caret
+# Useful commands:
+deactivate  # exits the virtualenvironment
+rmvirtualenv envname  # removes virtualenv envname
+workon envname  # activates virtualenv name. You can switch very easily between virtual environments.
+
+# From inside your virtual environment, we will install basic python packages
+pip install jupyter numpy scipy matplotlib
+
+```
+
+If the above executed with no errors, then you're good to go. For users of other OS, make sure you are inside a virtual environment, with pip and these packages installed: jupyter numpy scipy matplotlib
+
+## Messing around with python
+
+Go into `02-messing-around-with-python` and start a notebook:
+
+```bash
+workon standard
+jupyter notebook
+```
+
+## References
 [Community git book](https://book.git-scm.com/docs)
-
-## A small intro to UNIX and bash
-
-## More general references
+[An introduction to Linux Permissions](https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-permissions)
+[More information on Unix permissions](https://en.wikipedia.org/wiki/Unix_security)
 [Python 4 Photonics](https://python4photonics.gitlab.io)
