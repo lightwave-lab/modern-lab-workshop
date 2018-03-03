@@ -207,7 +207,7 @@ Cheating: https://lectures.quantecon.org/py/index.html
 From your mac: https://stackoverflow.com/questions/5541096/ni-visa-pyvisa-on-mac-os-x-snow-leopard
 
 ## References
-[Community git book](https://book.git-scm.com/docs)
-[An introduction to Linux Permissions](https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-permissions)
-[More information on Unix permissions](https://en.wikipedia.org/wiki/Unix_security)
-[Python 4 Photonics](https://python4photonics.gitlab.io)
+* [Community git book](https://book.git-scm.com/docs)
+* [An introduction to Linux Permissions](https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-permissions)
+* [More information on Unix permissions](https://en.wikipedia.org/wiki/Unix_security)
+* [Python 4 Photonics](https://python4photonics.gitlab.io)
