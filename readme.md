@@ -29,9 +29,7 @@ We are going to discuss some techniques to make our lives a little easier and ou
     - GPIB, USB and Serial protocols
     - Ethernet, TCP, IP, Socket
     - Instruments, hosts, servers, clients
-    - Building a server machine in your lab: basic concepts
     - Saving and backing data up (version control?)
-    - Walkthrough of all instruments in the lab
 * 2:15PM - Break
 * 2:30PM - Demo sessions (Eric, HT, Tait et al.)
     - HT: SIMPEL: quick overview of cython integration
@@ -195,12 +193,18 @@ If the above executed with no errors, then you're good to go. For users of other
 
 ## Messing around with python
 
-Go into `02-messing-around-with-python` and start a notebook:
+Go into `02-messing-around-with-python` and start a notebook server:
 
 ```bash
 workon standard
 jupyter notebook
 ```
+
+Cheating: https://lectures.quantecon.org/py/index.html
+
+## VISA control
+
+From your mac: https://stackoverflow.com/questions/5541096/ni-visa-pyvisa-on-mac-os-x-snow-leopard
 
 ## References
 [Community git book](https://book.git-scm.com/docs)
