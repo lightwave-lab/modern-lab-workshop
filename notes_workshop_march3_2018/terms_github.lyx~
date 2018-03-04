@@ -1,0 +1,674 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\setlength\parindent{0pt}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1.7cm
+\topmargin 2.5cm
+\rightmargin 1.3cm
+\bottommargin 2.5cm
+\headsep 0.5cm
+\footskip 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Notes from Thomas's Tutorial 
+\end_layout
+
+\begin_layout Standard
+Saturday 3rd March, 2018
+\end_layout
+
+\begin_layout Standard
+website: https://github.com/lightwave-lab/modern-lab-workshop
+\end_layout
+
+\begin_layout Itemize
+Git: version control
+\end_layout
+
+\begin_layout Itemize
+Github: website
+\end_layout
+
+\begin_layout Itemize
+repository: add files to here
+\end_layout
+
+\begin_layout Itemize
+commit: changes to the file, browse history
+\end_layout
+
+\begin_layout Itemize
+hash: identifier for each commit
+\end_layout
+
+\begin_layout Itemize
+fork: you can start your own thing from someone else's stuff
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+only a Github feature
+\end_layout
+
+\begin_layout Itemize
+then you could pull request to the original project
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+cloning: copying the history of git 
+\end_layout
+
+\begin_layout Itemize
+remote: Github's copy.
+ vs local: your copy
+\end_layout
+
+\begin_layout Itemize
+stage: put all the modified files on a stage, and you encapsulate that into
+ a commit
+\end_layout
+
+\begin_layout Itemize
+Before you commit, you have to add something to a stage.
+\end_layout
+
+\begin_layout Itemize
+Don't commit a binary file.
+ (it has hex code).
+ Don't need to commit thesis.pdf.
+\end_layout
+
+\begin_layout Itemize
+download remote copy to local one: git fetch
+\end_layout
+
+\begin_layout Itemize
+pull: a fetch plus merge
+\end_layout
+
+\begin_layout Itemize
+push: put master to origin/master, then put it to the GitHub master
+\end_layout
+
+\begin_layout Standard
+Github: has a master who can create branches, accept pull requests.
+ The owner can delete the entire thing
+\end_layout
+
+\begin_layout Itemize
+Computer:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+repository
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+origin/master
+\series default
+ (remote copy).
+ first time: use 'clone' then all subsequent times, it is 'fetch'
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+master
+\series default
+.
+ Might be behind by 5 commits
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Pull:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+pull these changes to put them into your master file.
+\end_layout
+
+\begin_layout Itemize
+it equals fetch follows by 'merge'
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+git init, etc- see the 15 minute exercise
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+https://try.github.io/levels/1/challenges/1
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+Terminalogy
+\end_layout
+
+\begin_layout Itemize
+Path: the journey of folders that the computer goes through to check where
+ your thing is
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+this is important because Python sometimes comes in two places- one before
+ the other
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Brew:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+a package manager
+\end_layout
+
+\begin_layout Itemize
+install a bunch of open source projects, git, latex too
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+shell: an interactive program that is created at login and survives during
+ the entire session
+\end_layout
+
+\begin_layout Itemize
+use bash to execute scripts in a new subshell and use 'source' to eecute
+ sripts in the same shell
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+bash opens a new shell- loads script and execute
+\end_layout
+
+\begin_layout Itemize
+source: read file and copy paste to current shell
+\end_layout
+
+\begin_layout Itemize
+if you want to learn more, type 
+\begin_inset Quotes eld
+\end_inset
+
+man bash
+\begin_inset Quotes erd
+\end_inset
+
+ into terminal
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+Other Terminal stuff
+\end_layout
+
+\begin_layout Itemize
+ls: list things
+\end_layout
+
+\begin_layout Itemize
+ls - l:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+list things like this:
+\end_layout
+
+\begin_layout Itemize
+mode:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+permission classes:
+\end_layout
+
+\begin_layout Itemize
+file type: d (directiory) - (file)
+\end_layout
+
+\begin_layout Itemize
+rwx
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+read, write, execute for user
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+rwx
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+read, write, execute for group
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+rwx
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+other people who use it can do this
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+execute: execute the file with permissions of the owner
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+owner: heidimiller
+\end_layout
+
+\begin_layout Itemize
+group attached to the file: staff
+\end_layout
+
+\begin_layout Itemize
+size: in bytes
+\end_layout
+
+\begin_layout Itemize
+last modification date: March 3
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+cd Documents
+\end_layout
+
+\begin_layout Itemize
+open .
+\end_layout
+
+\begin_layout Itemize
+(open the docs)
+\end_layout
+
+\begin_layout Itemize
+git clone https://github.com/lightwave-lab/modern-lab-workshop.git
+\end_layout
+
+\begin_layout Itemize
+create new folder: moder-lab-workshop inside documents: 
+\end_layout
+
+\begin_layout Itemize
+git –version
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+2.14.3
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+compile tex file, produces thesis.pdf:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+latexmk -cd -f -pdf -interaction=nonstopmode -synctex=1 thesis.tex 
+\end_layout
+
+\begin_layout Itemize
+or use: latexmk -pdf thesis.tex
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+pwd: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+check what working directory you are in
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+git status: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+check your changes
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+nano.gitignore
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+type: thesis.pdf
+\end_layout
+
+\begin_layout Itemize
+then control x
+\end_layout
+
+\begin_layout Itemize
+say y
+\end_layout
+
+\begin_layout Itemize
+enter
+\end_layout
+
+\begin_layout Itemize
+then it ignores adding the thesis.pdf
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+git rm thesis.pdf
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+removes thesis.pdf from the repository
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+git rm f thesis.pdf
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+force removal regardless
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+git fetch
+\end_layout
+
+\begin_layout Itemize
+rm
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+remove these files from files you will push.
+ In our case, we removed the 
+\begin_inset Quotes eld
+\end_inset
+
+untracked files
+\begin_inset Quotes erd
+\end_inset
+
+ because they are added files that we created and we don't want to add them.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+recover:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+git checkout –(your file)
+\end_layout
+
+\begin_layout Itemize
+if you accidentally deleted it.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+git add acknowledgements.tex
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the stage now has that change.
+\end_layout
+
+\begin_layout Itemize
+use reset HEAD blah to take it out of the stage
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+git commit -m "acknowledging Thomas!!" 
+\end_layout
+
+\begin_layout Itemize
+git pull, then save the file that shows up in the editor then exit
+\end_layout
+
+\begin_layout Itemize
+type :q to go away from the merge message
+\end_layout
+
+\begin_layout Itemize
+git push
+\end_layout
+
+\begin_layout Itemize
+enter username and password
+\end_layout
+
+\begin_layout Itemize
+groups heidim
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the groups I belong to
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+sudo touch this-file
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+touch creates a file and updates the modified date
+\end_layout
+
+\begin_layout Itemize
+requires password because doing sudo
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+check the above by typing ls -l
+\end_layout
+
+\begin_layout Itemize
+then you can remove it by typing rm this-file, then type y
+\end_layout
+
+\begin_layout Itemize
+just cd: home
+\end_layout
+
+\begin_layout Itemize
+cd ..
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+shortcut for parent folder
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+ls -la
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+a is for all
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+if you want to write something and your access is denied, write 
+\begin_inset Quotes eld
+\end_inset
+
+sudo
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+check your permissions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+-rw-r–r–@
+\end_layout
+
+\begin_layout Itemize
+this is a binary representation
+\end_layout
+
+\begin_layout Itemize
+it is 644 I think
+\end_layout
+
+\begin_layout Itemize
+happens when you install stuff
+\end_layout
+
+\begin_layout Itemize
+you know you don't have acess when it is not a 755 directory I think
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Thomas sent a book to read
+\end_layout
+
+\begin_layout Itemize
+Ask Thomas about how to get subl
+\end_layout
+
+\begin_layout Itemize
+look at the manual for a command: man chmod
+\end_layout
+
+\begin_layout Itemize
+rm -r Envs/
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+to remove the file Evns/
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+Python
+\end_layout
+
+\begin_layout Itemize
+display.display: live plotting
+\end_layout
+
+\end_body
+\end_document
